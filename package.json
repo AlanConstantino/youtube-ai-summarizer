@@ -1,0 +1,24 @@
+{
+  "name": "youtube-ai-summarizer",
+  "version": "1.0.0",
+  "description": "Automated YouTube channel monitoring, transcription, and AI summarization",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js --test"
+  },
+  "keywords": [
+    "youtube",
+    "ai",
+    "summarizer",
+    "whisper",
+    "openai"
+  ],
+  "author": "Alan Constantino",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "openai": "^4.77.0"
+  }
+}
