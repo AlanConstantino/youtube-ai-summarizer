@@ -107,8 +107,8 @@ export async function downloadAudio(videoId) {
   }
 
   try {
-    // Download audio only, convert to mp3 (use cookies to avoid 403 errors)
-    const cmd = `yt-dlp --cookies-from-browser chrome -x --audio-format mp3 --audio-quality 0 -o "${outputPath}" "${videoUrl}"`;
+    // Download audio only, convert to mp3 (use android client to avoid 403 errors)
+    const cmd = `yt-dlp --extractor-args "youtube:player_client=android" -x --audio-format mp3 --audio-quality 0 -o "${outputPath}" "${videoUrl}"`;
     await execAsync(cmd, { maxBuffer: 10 * 1024 * 1024, timeout: 300000 }); // 5 min timeout
 
     console.log(`Downloaded audio: ${outputPath}`);
