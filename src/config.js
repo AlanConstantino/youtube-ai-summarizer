@@ -17,7 +17,8 @@ export const CHANNELS = [
   '@TwoMinutePapers',
   '@intheworldofai',
   '@AICodeKing',
-  '@aisamsonreal'
+  '@aisamsonreal',
+  '@aiexplained-official'
 ];
 
 export const PATHS = {
