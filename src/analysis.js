@@ -68,12 +68,6 @@ Keep the analysis concise but insightful.`
 export async function analyzeContent(videoData) {
   const { title, description, transcription, channelName } = videoData;
 
-  // Truncate transcription if too long (keep under 100k chars for context window)
-  const maxTranscriptionLength = 80000;
-  const truncatedTranscription = transcription && transcription.length > maxTranscriptionLength
-    ? transcription.substring(0, maxTranscriptionLength) + '... [truncated]'
-    : transcription;
-
   try {
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
@@ -93,7 +87,7 @@ Be concise but comprehensive. Focus on actionable insights.`
 **Description:** ${description || 'No description'}
 
 **Full Transcription:**
-${truncatedTranscription || 'No transcription available'}
+${transcription || 'No transcription available'}
 
 Provide:
 
