@@ -1,13 +1,13 @@
 # YouTube AI Channel Summarizer
 
-Automated YouTube channel monitoring, transcription, and AI summarization. Monitors 17 AI-focused YouTube channels, transcribes new videos using Whisper, and generates detailed content analyses with remake suggestions.
+Automated YouTube channel monitoring, transcription, and AI summarization. Monitors 17 AI-focused YouTube channels, transcribes new videos using local Whisper, and generates detailed content analyses with remake suggestions.
 
 ## Features
 
 - 📺 **Channel Monitoring** - Tracks 17 AI/tech YouTube channels
 - 🎯 **Smart Filtering** - Only processes new videos since last run
 - 🖼️ **Thumbnail Analysis** - GPT-4o vision analysis of thumbnails
-- 🎤 **Whisper Transcription** - Full audio transcription via OpenAI Whisper API
+- 🎤 **Local Whisper Transcription** - Fast, free transcription via whisper.cpp (large-v3-turbo)
 - 📊 **Content Analysis** - Executive summaries, key takeaways, tools mentioned
 - 💡 **Remake Suggestions** - Unique angles and content opportunities
 - 📈 **Trend Analysis** - Aggregate insights across all channels
@@ -36,7 +36,8 @@ Automated YouTube channel monitoring, transcription, and AI summarization. Monit
 
 - Node.js 18+
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) installed and in PATH
-- OpenAI API key with GPT-4o and Whisper access
+- [whisper-local](file:///Users/alanconstantino/Code/claude_code/whisper-local) set up with large-v3-turbo model
+- OpenAI API key with GPT-4o access (for analysis only)
 
 ## Installation
 
@@ -89,6 +90,14 @@ Edit `src/config.js` to:
 - Add/remove channels
 - Change video limits
 - Adjust maximum video duration
+
+## Transcription
+
+Uses local whisper.cpp with the large-v3-turbo model:
+- **Speed**: ~12x real-time on Apple M4
+- **Cost**: Free (no API calls)
+- **Quality**: State-of-the-art accuracy
+- **No file size limits**: Handles any video length
 
 ## License
 
