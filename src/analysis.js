@@ -19,7 +19,7 @@ export async function analyzeThumbnail(thumbnailPath, videoTitle) {
     const mimeType = 'image/jpeg';
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o',
+      model: 'gpt-4o-mini',
       messages: [
         {
           role: 'user',
@@ -76,7 +76,7 @@ export async function analyzeContent(videoData) {
 
   try {
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o',
+      model: 'gpt-4o-mini',
       messages: [
         {
           role: 'system',
@@ -153,7 +153,7 @@ export async function generateAggregateInsights(videoAnalyses) {
 
   try {
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o',
+      model: 'gpt-4o-mini',
       messages: [
         {
           role: 'system',
